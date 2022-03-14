@@ -1,19 +1,26 @@
 public class Chick extends Animal
 {
-    //1) Variables
+    //Instance Variables
+    private int age;
     private boolean canPeep;
     private boolean canCheep;
 
-    //2) Constructors
-    public Chick (String name, int age, String type, boolean canPeep, boolean canCheep)
+    //Constructor
+    public Chick (String name, String type, String sound, int age, boolean canPeep, boolean canCheep)
     {
-        super(name, age, type);
+        super (name, type, sound);
+        this.age = age;
         this.canPeep = canPeep;
         this.canCheep = canCheep;
+    }//End constructor
+
+    public boolean getCanPeep ()
+    {
+        return canPeep;
     }
 
-    //4) Getters
-    //5) Setters
-    //6) Brain Method
-    //3 toString
+    public boolean getCanCheep ()
+    {
+        return canCheep;
+    }
 }//End class Chick

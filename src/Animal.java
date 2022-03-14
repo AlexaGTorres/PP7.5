@@ -1,23 +1,30 @@
 public class Animal
 {
-    //Parent class Animal
-    //Each specific animal has all the same required attributes
-    //1) Variables
+    //Instance Variables
     public String name;
-    public int age;
     public String type;
+    public String sound;
 
-
-    //2) Constructors
-    public Animal (String name, int age, String type)
+    //Constructor
+    public Animal (String name, String type, String sound)
     {
         this.name = name;
-        this.age = age;
         this.type = type;
+        this.sound = sound;
     }//End constructor
 
-    //4) Getters
-    //5) Setters
-    //6) Brain Method
-    //3 toString
+    public String getName ()
+    {
+        return name;
+    }
+
+    public String getType ()
+    {
+        return type;
+    }
+
+    public String getSound ()
+    {
+        return sound;
+    }
 }//End class Animal

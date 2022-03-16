@@ -2,16 +2,16 @@ public class animalDriver
 {
     public static void main (String[] args)
    {
-       //Farmer, one cow, one pig, two chicks
+      //Farmer, one cow, one pig, two chicks
 
        Farmer farmer  = new Farmer ("Old MacDonald");
 
-       Animal cow = new Cow ("John", "cow", "moo");
+       Animal cow = new Cow ("cow", "moo", "Peach");
 
-       Animal pig = new Pig ("Oscar", "pig", "oink");
+       Animal pig = new Pig ("pig", "pig", "oink");
 
-       Animal chick = new Chick ("Peach", "chick", "peep", 0, true, false);
-       Animal chickFriend = new Chick ("Bee", "chick", "cheep",3, false, true);
+       Animal chick = new Chick ("chick", "", 0);
+       Animal chickFriend = new Chick ("chick", "", 3);
 
        Animal[] myFarm = new Animal[4];
        myFarm[0] = cow;
@@ -19,13 +19,20 @@ public class animalDriver
        myFarm[2] = chick;
        myFarm[3] =  chickFriend;
 
-       for (Animal element : myFarm)
+       for (Animal i : myFarm)
        {
-           System.out.print (farmer.getName() + " had a farm, E-I-E-I-O! " +
-                   "\nAnd on that farm he had a " + element.getType() + ", E-I-E-I-O!" +
-                   "\nWith a " + element.getSound() + "-" + element.getSound() + " here and a " + element.getSound() + "-" + element.getSound() + " there," +
-                   "\nHere a " + element.getSound() + ", there a " + element.getSound() + ", everywhere " + element.getSound() + "-" + element.getSound() + "" +
-                   "\n" + farmer.getName() + " had a farm, E-I-E-I-O!");
+           if (i.getType().equals("chick"))
+           {
+               if (i.getAge() <= 1)
+               {
+                   i.setSound("peep");
+               }
+               else
+               {
+                   i.setSound("cheep");
+               }
+           }
+           System.out.println (farmer.toString(i));
            System.out.println ("\n");
        }
    }
